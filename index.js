@@ -66,42 +66,36 @@ function mostrarPizza(pizza) {
 function cargarPizzaDesdeLocalStorage() {
   const pizzaGuardada = localStorage.getItem('ultimaPizza');
   if (pizzaGuardada) {
-    const pizza = JSON.parse(pizzaGuardada); // Convertir JSON a objeto
-    mostrarPizza(pizza); // Mostrar la pizza guardada
+    const pizza = JSON.parse(pizzaGuardada); 
+    mostrarPizza(pizza); 
   }
 }
 
-// Guardar la pizza en localStorage
 function guardarPizzaEnLocalStorage(pizza) {
-  localStorage.setItem('ultimaPizza', JSON.stringify(pizza)); // Guardar como JSON
+  localStorage.setItem('ultimaPizza', JSON.stringify(pizza)); 
 }
 
-// Escuchar el evento submit del formulario
 pizzaForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
   const pizzaBuscadaId = parseInt(document.getElementById('idPizza').value);
 
-  // Verificar si el input es un número válido
   if (isNaN(pizzaBuscadaId)) {
-    contenedorMostrarPizza.innerHTML = `<p>Debe ingresar un número válido</p>`;
+    contenedorMostrarPizza.innerHTML = `<p>Debe ingresar un número</p>`;
     return;
   }
 
   const pizzaBuscada = pizzas.find(pizza => pizza.id === pizzaBuscadaId);
 
   if (pizzaBuscada) {
-    mostrarPizza(pizzaBuscada); // Mostrar la pizza en la página
-    guardarPizzaEnLocalStorage(pizzaBuscada); // Guardar la pizza en localStorage
+    mostrarPizza(pizzaBuscada); 
+    guardarPizzaEnLocalStorage(pizzaBuscada); 
   } else {
     contenedorMostrarPizza.innerHTML = `<p>No se encontró ninguna pizza con el ID ${pizzaBuscadaId}</p>`;
   }
   input.classList.add('enviado');
   
-  // Opcional: Limpiar el input después del envío
-  input.value = '';
 });
 
-// Cargar pizza desde localStorage al iniciar la página
 cargarPizzaDesdeLocalStorage();
 
