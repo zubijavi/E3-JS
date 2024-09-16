@@ -1,0 +1,67 @@
+body{
+    background: #353535;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 2rem;
+}
+h1{
+    color: wheat;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+img{
+    height: 80px;
+    width: 166px;
+}
+button{
+    font-size: 2rem;
+    background-color: #353535; 
+    color: wheat;
+}
+input{
+    font-size: 2rem;
+    outline: none;
+}
+input::placeholder{
+    text-align: center;
+    color: wheat;
+    background-color: #353535; 
+}
+input:focus{
+    text-align: center;
+    color: wheat;
+    background-color: #353535; 
+}
+.enviado {
+    border-color: #4CAF50;
+    background-color: #e0ffe0;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
+  }
+.contenedorMostrarPizza{
+    text-align: center;
+    color: wheat;
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+}
+.detalles{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.contenedorMostrarPizza img{
+    border: double wheat 6px;
+    height: 300px;
+    width: auto;
+}
+
